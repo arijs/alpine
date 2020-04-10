@@ -295,6 +295,7 @@ export default class Component {
         return saferEval(expression, this.$data, {
             ...extraVars(),
             $dispatch: this.getDispatchFunction(el),
+            $el: el
         })
     }
 

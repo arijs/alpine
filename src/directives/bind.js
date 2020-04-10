@@ -62,7 +62,7 @@ export function handleAttributeBindingDirective(component, el, attrName, express
         } else {
             el.removeAttribute(attrName)
         }
-    } else {
+    } else if (attrName !== null) {
         el.setAttribute(attrName, value)
     }
 }
