@@ -295,6 +295,7 @@ export default class Component {
         return saferEval(expression, this.$data, {
             ...extraVars(),
             $dispatch: this.getDispatchFunction(el),
+            $currentEl: el
         })
     }
 
@@ -302,6 +303,7 @@ export default class Component {
         return saferEvalNoReturn(expression, this.$data, {
             ...extraVars(),
             $dispatch: this.getDispatchFunction(el),
+            $currentEl: el
         })
     }
 

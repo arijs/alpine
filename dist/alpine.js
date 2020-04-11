@@ -578,7 +578,7 @@
       } else {
         el.removeAttribute(attrName);
       }
-    } else {
+    } else if (attrName !== null) {
       el.setAttribute(attrName, value);
     }
   }
@@ -1503,7 +1503,8 @@
 
     evaluateReturnExpression(el, expression, extraVars = () => {}) {
       return saferEval(expression, this.$data, _objectSpread2({}, extraVars(), {
-        $dispatch: this.getDispatchFunction(el)
+        $dispatch: this.getDispatchFunction(el),
+        $el: el
       }));
     }
 
